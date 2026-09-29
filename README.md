@@ -4,10 +4,7 @@
 ### Unordered Bulleted Lists
 - Install redsocks, in arch it could be found in blackarch repo
 ```bash
-```
-```bash 
-```bash
 # after adding the blackarch repo. Using pacman
 sudo pacman -Syu redsocks
 ```
-
+```
