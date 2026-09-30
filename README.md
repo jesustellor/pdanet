@@ -11,7 +11,7 @@ sudo pacman -Syu redsocks
 
 ### Configure Redsocks
 
-- Create or edit the redsocks configuration file at '/etc/redsocks.conf'
+- Create or edit the redsocks configuration file at '/etc/redsocks.conf' the first redsocks block is for your system(lo) and the second block is for docker containers. You need to have tor installed and the service running to listen on port 9050
 
 ```bash
 base {
@@ -35,6 +35,22 @@ redsocks {
     port = 9050;
     type = socks5;
 }
+```
+
+- Create the system service for redsocks at /etc/systemd/system/redsocks.service
+
+```bash
+[Unit]
+Description=Redirects network traffic to a SOCKS or HTTP proxy
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/redsocks -c /etc/redsocks.conf
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 
