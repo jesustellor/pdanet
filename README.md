@@ -53,4 +53,20 @@ RestartSec=3
 WantedBy=multi-user.target
 ```
 
+- Enable and start the redsocks service
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable redsocks
+sudo systemctl start redsocks
+```
+
+### Configure dnscrypt 
+
+- Configure dnscrypt to listen on 127 and docker 172.. install dnscrypt 
+
+```bash
+sudo pacman -S dnscrypt-proxy
+```
+
 
