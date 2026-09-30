@@ -1,4 +1,4 @@
-# Connecting phone's proxy connection to Linux machine(computer), pdanet+, NetShare, TetherFuseNet etc..
+# Connecting phone's proxy to Linux machine(computer), pdanet+, NetShare, TetherFuseNet etc..
 ## This guide outlines the steps to set up PdaNet+ with redsocks, and dnscrypt. We will use systemd-resolved and configure NetworkManager to use it.
 
 ### Instructions for proxy connection
