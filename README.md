@@ -69,4 +69,18 @@ sudo systemctl start redsocks
 sudo pacman -S dnscrypt-proxy
 ```
 
+- the configuration file should be located in /etc/dnscrypt-proxy/dnscrypt-proxy.toml near the top adjust line to look like this.
+
+```bash
+listen_addresses = ['127.0.0.1:53', '172.17.0.1:53', '[::1]:53']
+```
+
+- Restart dnscrypt-proxy service to apply changes.
+
+```bash
+sudo systemctl restart dnscrypt-proxy.service
+```
+
+### Create iptables for redsocks pdanet+ connection.
+
 
